@@ -26,6 +26,12 @@
            sync-c="true"
            sync-j="4"
            revision="refs/heads/15.0" />
+           
+  <remote  name="vicaso"
+           fetch="https://github.com/VICASO-Gang/"
+           sync-c="true"
+           sync-j="4"
+           revision="refs/heads/lineage-22.2" />
 
   <remove-project path="android" />
   <remove-project path="art" />
@@ -66,15 +72,15 @@
   <remove-project path="vendor/lineage" />
 
   <!-- Android Manifest  -->
-  <project path="android" name="android" remote="axion" />
+  <project path="android" name="android" remote="vicaso" />
   
-  <project path="art" name="android_art" remote="axion" />
+  <project path="art" name="android_art" remote="vicaso" />
   
-  <project path="bionic" name="android_bionic" groups="pdk" remote="axion"/>
-  <project path="bootable/recovery" name="android_bootable_recovery" groups="pdk" remote="axion" />
+  <project path="bionic" name="android_bionic" groups="pdk" remote="vicaso"/>
+  <project path="bootable/recovery" name="android_bootable_recovery" groups="pdk" remote="vicaso" />
 
   <!-- Build  -->
-  <project path="build/make" name="android_build" groups="pdk,sysui-studio" remote="axion" >
+  <project path="build/make" name="android_build" groups="pdk,sysui-studio" remote="vicaso" >
     <linkfile dest="build/CleanSpec.mk" src="CleanSpec.mk" />
     <linkfile dest="build/buildspec.mk.default" src="buildspec.mk.default" />
     <linkfile dest="build/core" src="core" />
@@ -82,73 +88,73 @@
     <linkfile dest="build/target" src="target" />
     <linkfile dest="build/tools" src="tools" />
   </project>
-  <project path="build/release" name="android_build_release" groups="pdk,tradefed,sysui-studio" remote="axion" />
-  <project path="build/soong" name="android_build_soong" groups="pdk,tradefed,sysui-studio" remote="axion" >
+  <project path="build/release" name="android_build_release" groups="pdk,tradefed,sysui-studio" remote="vicaso" />
+  <project path="build/soong" name="android_build_soong" groups="pdk,tradefed,sysui-studio" remote="vicaso" >
     <linkfile dest="Android.bp" src="root.bp" />
     <linkfile dest="bootstrap.bash" src="bootstrap.bash" />
   </project>
   
   <!-- Device  -->
-  <project path="device/lineage/sepolicy" name="android_device_lineage_sepolicy" remote="axion" />
+  <project path="device/lineage/sepolicy" name="android_device_lineage_sepolicy" remote="vicaso" />
   
   <!-- External  -->
   <project path="external/bouncycastle" name="android_external_bouncycastle" groups="pdk" remote="axion" />
 
   <!-- Lineage SDK  -->
-  <project path="lineage-sdk" name="android_lineage-sdk" remote="axion" />
+  <project path="lineage-sdk" name="android_lineage-sdk" remote="vicaso" />
 
   <!-- Frameworks  -->
-  <project path="frameworks/av" name="android_frameworks_av" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="axion" />
-  <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="axion" />
+  <project path="frameworks/av" name="android_frameworks_av" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="vicaso" />
+  <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="vicaso" />
   <project path="frameworks/libs/systemui" name="android_frameworks_libs_systemui" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="axion" />
-  <project path="frameworks/native" name="android_frameworks_native" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="axion" />
-  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" groups="pdk" remote="axion" />
+  <project path="frameworks/native" name="android_frameworks_native" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="vicaso" />
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" groups="pdk" remote="vicaso" />
   
   <!-- Hardware  -->
   <project path="hardware/google/camera" name="android_hardware_google_camera" groups="pdk" remote="axion" />
   <project path="hardware/google/gchips" name="android_hardware_google_gchips" groups="pdk-lassen,pdk-gs-arm,pdk-gs-imgtec" remote="axion" />
   <project path="hardware/google/graphics/common" name="android_hardware_google_graphics_common" groups="pdk-lassen,pdk-gs-arm" remote="axion" />
-  <project path="hardware/google/pixel" name="android_hardware_google_pixel" groups="generic_fs,pixel,pdk-gs-arm" remote="axion" />
+  <project path="hardware/google/pixel" name="android_hardware_google_pixel" groups="generic_fs,pixel,pdk-gs-arm" remote="vicaso" />
   <project path="hardware/google/pixel-sepolicy" name="android_hardware_google_pixel-sepolicy" groups="generic_fs,pixel" remote="axion" />
-  <project path="hardware/interfaces" name="android_hardware_interfaces" groups="pdk,sysui-studio" remote="axion" />
+  <project path="hardware/interfaces" name="android_hardware_interfaces" groups="pdk,sysui-studio" remote="vicaso" />
 
   <!-- Axion Packages  -->
-  <project path="packages/apps/Backgrounds" name="android_packages_apps_Backgrounds" groups="pdk-fs" remote="axion" />
-  <project path="packages/apps/ColumbusService" name="android_packages_apps_ColumbusService" groups="pdk-fs" remote="axion" />
+  <project path="packages/apps/Backgrounds" name="android_packages_apps_Backgrounds" groups="pdk-fs" remote="vicaso" />
+  <project path="packages/apps/ColumbusService" name="android_packages_apps_ColumbusService" groups="pdk-fs" remote="vicaso" />
   <project path="packages/apps/FaceUnlock" name="android_packages_apps_FaceUnlock" remote="crdroid-gitlab" />
   <project path="packages/apps/GameSpace" name="android_packages_apps_GameSpace" groups="pdk-fs" remote="axion" />
   <project path="packages/apps/LineageParts" name="android_packages_apps_LineageParts" remote="axion" />
-  <project path="packages/apps/LMOFreeform" name="android_packages_apps_LMOFreeform" groups="pdk-fs" remote="axion" />
-  <project path="packages/apps/Matlog" name="android_packages_apps_Matlog" groups="pdk-fs" remote="axion" />
+  <project path="packages/apps/LMOFreeform" name="android_packages_apps_LMOFreeform" groups="pdk-fs" remote="vicaso" />
+  <project path="packages/apps/Matlog" name="android_packages_apps_Matlog" groups="pdk-fs" remote="vicaso" />
   <project path="packages/apps/Personalizations" name="android_packages_apps_Personalizations" groups="pdk-fs,sysui-studio" remote="axion" />
-  <project path="packages/apps/SetupWizard" name="android_packages_apps_SetupWizard" remote="axion" />
+  <project path="packages/apps/SetupWizard" name="android_packages_apps_SetupWizard" remote="vicaso" />
   <project path="packages/apps/VendorSupport" name="android_packages_apps_VendorSupport" groups="pdk-fs" remote="axion" />
-  <project path="packages/apps/Updater" name="android_packages_apps_Updater" remote="axion" />
-  <project path="packages/apps/ViPER4AndroidFX" name="android_packages_apps_ViPER4AndroidFX" remote="axion" revision="v4a" />
-  <project path="packages/services/Omnijaws" name="android_packages_services_Omnijaws" groups="pdk-cw-fs,pdk-fs" remote="axion" />
+  <project path="packages/apps/Updater" name="android_packages_apps_Updater" remote="vicaso" />
+  <project path="packages/apps/ViPER4AndroidFX" name="android_packages_apps_ViPER4AndroidFX" remote="axion" revision="lineage-23.2" />
+  <project path="packages/services/Omnijaws" name="android_packages_services_Omnijaws" groups="pdk-cw-fs,pdk-fs" remote="vicaso" />
 
   <!-- AOSP Packages  -->
-  <project path="packages/apps/Settings" name="android_packages_apps_Settings" groups="pdk-fs" remote="axion" />
-  <project path="packages/apps/Trebuchet" name="android_packages_apps_Launcher3" groups="pdk-fs,sysui-studio" remote="axion" />
-  <project path="packages/apps/ThemePicker" name="android_packages_apps_ThemePicker" groups="pdk-fs,sysui-studio" remote="axion" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" groups="pdk-fs" remote="vicaso" />
+  <project path="packages/apps/Trebuchet" name="android_packages_apps_Launcher3" groups="pdk-fs,sysui-studio" remote="vicaso" />
+  <project path="packages/apps/ThemePicker" name="android_packages_apps_ThemePicker" groups="pdk-fs,sysui-studio" remote="vicaso" />
   
   <!-- AOSP Modules  -->
-  <project path="packages/modules/Bluetooth" name="android_packages_modules_Bluetooth" groups="pdk" remote="axion" />
+  <project path="packages/modules/Bluetooth" name="android_packages_modules_Bluetooth" groups="pdk" remote="vicaso" />
   <project path="packages/modules/StatsD" name="android_packages_modules_StatsD" groups="pdk-cw-fs,pdk-fs" remote="axion" />
-  <project path="packages/modules/Wifi" name="android_packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="axion" />
+  <project path="packages/modules/Wifi" name="android_packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="vicaso" />
 
   <!-- AOSP Services  -->
-  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="axion" />
+  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="vicaso" />
 
   <!-- System  -->
-  <project path="system/core" name="android_system_core" groups="pdk" remote="axion" />
+  <project path="system/core" name="android_system_core" groups="pdk" remote="vicaso" />
   <project path="system/memory/lmkd" name="android_system_memory_lmkd" groups="pdk" remote="axion" />
-  <project path="system/sepolicy" name="android_system_sepolicy" groups="pdk" remote="axion" />
+  <project path="system/sepolicy" name="android_system_sepolicy" groups="pdk" remote="vicaso" />
 
   <!-- Vendor  -->
-  <project path="vendor/addons" name="android_vendor_addons" remote="axion" />
-  <project path="vendor/lineage" name="android_vendor_lineage" remote="axion" />
+  <project path="vendor/addons" name="android_vendor_addons" remote="vicaso" />
+  <project path="vendor/lineage" name="android_vendor_lineage" remote="vicaso" />
   <project path="vendor/official_devices" name="official_devices" remote="axion" revision="main" />
   <project path="vendor/gapps" name="vendor_gapps" remote="axion-gitlab" revision="vic" />
-  <project path="vendor/qcom/opensource/power" name="android_vendor_qcom_opensource_power" groups="qcom,lanai-vendor" remote="axion" />
+  <project path="vendor/qcom/opensource/power" name="android_vendor_qcom_opensource_power" groups="qcom,lanai-vendor" remote="vicaso" />
 </manifest>
